@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hải Lam E&C | Giải Pháp Kỹ Thuật & Tự Động Hóa Công Nghiệp</title>
+    <meta name="description" content="Hải Lam E&C cung cấp giải pháp thiết kế – thi công – tích hợp hệ thống điện và điều khiển công nghiệp trọn gói. Electrical • Instrumentation • Automation • Environmental Monitoring.">
+    <style>
+        /* =========================================
+           RESET & VARIABLES
+           ========================================= */
+        :root {
+            --primary: #2F423B; /* Deep Technical Green - User requested */
+            --primary-dark: #1e2b26;
+            --secondary: #4a5d55; /* Muted Green-Grey */
+            
+            --brand-green: #0AE340; /* Bright Green - User requested for accents */
+            --logo-green: #2F7D32; /* Updated Exact Green for Logo */
+            
+            --accent: #D32F2F; /* Engineering Red */
+            --accent-hover: #b71c1c;
+            
+            --light: #f1f5f3; /* Very light green tint */
+            --white: #ffffff;
+            --text-main: #1a202c;
+            --text-light: #525f5a;
+            --border: #e2e8f0;
+            --container-width: 1200px;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-main);
+            background-color: var(--white);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* =========================================
+           UTILITIES
+           ========================================= */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .col {
+            padding: 0 15px;
+            flex: 1;
+        }
+
+        .text-center { text-align: center; }
+        .text-white { color: var(--white); }
+        .uppercase { text-transform: uppercase; }
+        .bold { font-weight: 700; }
+        
+        .section { padding: 80px 0; }
+        .section-dark { background-color: var(--primary); color: var(--white); }
+        .section-gray { background-color: var(--light); }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-dark .section-title {
+            color: var(--white);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin-top: 10px;
+        }
+
+        .section-title.center::after {
+            margin: 10px auto 0;
+        }
+
+        /* =========================================
+           HEADER
+           ========================================= */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: #d1d5db;
+            padding: 8px 0;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .top-bar i { color: var(--brand-green); margin-right: 5px; }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: flex-end; /* Changed from space-between since logo is gone */
+            align-items: center;
+            height: 90px;
+        }
+
+        /* Logo Styles Removed/Adjusted */
+        .logo svg {
+            height: 80px; 
+            width: auto;
+            display: block;
+        }
+
+        .main-nav ul { display: flex; gap: 30px; }
+        .main-nav a { 
+            font-weight: 700; 
+            color: var(--primary); 
+            font-size: 15px; 
+            text-transform: uppercase; 
+        }
+        .main-nav a:hover { color: var(--accent); }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        #hero {
+            /* High Quality Industrial Image */
+            background: linear-gradient(rgba(47, 66, 59, 0.85), rgba(47, 66, 59, 0.7)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920'); 
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            position: relative;
+        }
+        
+        #hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--white), transparent);
+            pointer-events: none;
+        }
+
+        .hero-content { max-width: 900px; position: relative; z-index: 2; }
+        .hero-title { font-size: 3.2rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; text-transform: uppercase; }
+        .hero-sub { font-size: 1.2rem; margin-bottom: 40px; color: #e2e8f0; font-weight: 400; max-width: 700px; border-left: 4px solid var(--brand-green); padding-left: 20px;}
+        .hero-tagline { 
+            font-size: 1.1rem; 
+            color: var(--brand-green); 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            margin-bottom: 15px; 
+            display: block; 
+            font-weight: 800;
+        }
+        .hero-btns { display: flex; gap: 20px; }
+
+        /* =========================================
+           ABOUT & STATS
+           ========================================= */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            border-top: 4px solid var(--accent);
+            transition: 0.3s;
+        }
+        
+        .stat-card:hover { transform: translateY(-5px); }
+
+        .stat-number { font-size: 3rem; font-weight: 800; color: var(--primary); display: block; line-height: 1; margin-bottom: 10px; }
+        .stat-label { font-size: 0.9rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+        /* =========================================
+           SERVICES
+           ========================================= */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--brand-green);
+        }
+
+        .service-img { 
+            height: 220px; 
+            background-color: #cbd5e1; 
+            background-size: cover; 
+            background-position: center;
+            position: relative;
+        }
+        
+        /* Service Images via CSS Backgrounds */
+        .service-img[data-label="I&C / Automation"] {
+            background-image: url('https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&q=80&w=800');
+        }
+        .service-img[data-label="Electrical & ELV"] {
+            background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800');
+        }
+        .service-img[data-label="Quan trắc"] {
+            background-image: url('https://images.unsplash.com/photo-1569000972010-33b8a36f29cd?auto=format&fit=crop&q=80&w=800');
+        }
+        .service-img[data-label="Design"] {
+            background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800');
+        }
+        
+        .service-body { padding: 30px; flex: 1; display: flex; flex-direction: column; border-bottom: 3px solid var(--primary);}
+        .service-card:hover .service-body { border-bottom-color: var(--accent); }
+
+        .service-title { font-size: 1.4rem; margin-bottom: 15px; color: var(--primary); font-weight: 800; min-height: 50px; line-height: 1.3; }
+        .service-desc { font-size: 0.95rem; color: var(--text-light); margin-bottom: 20px; flex: 1; }
+        
+        .service-desc ul { list-style: none; padding: 0; margin: 10px 0; }
+        .service-desc li { position: relative; padding-left: 20px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main); }
+        .service-desc li::before { 
+            content: '►'; 
+            color: var(--accent); 
+            position: absolute; 
+            left: 0; 
+            font-size: 0.8rem;
+            top: 3px;
+        }
+        .service-highlight { 
+            display: block; 
+            margin-top: 15px; 
+            font-weight: 700; 
+            color: var(--primary); 
+            font-size: 0.9rem; 
+            background: #f1f5f3; 
+            padding: 10px; 
+            border-left: 3px solid var(--brand-green); 
+        }
+
+        .service-link { 
+            color: var(--accent); 
+            font-weight: 700; 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            margin-top: auto; 
+            display: inline-block; 
+            letter-spacing: 1px;
+        }
+        .service-link:hover { color: var(--primary); }
+
+        /* =========================================
+           WHY US
+           ========================================= */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature-item { display: flex; gap: 20px; }
+        .feature-icon {
+            width: 70px; height: 70px;
+            background: rgba(10, 227, 64, 0.1); /* Low opacity brand green */
+            color: var(--brand-green);
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 4px;
+            font-size: 28px;
+            flex-shrink: 0;
+            border: 1px solid var(--brand-green);
+        }
+        .feature-text h4 { font-size: 1.3rem; margin-bottom: 10px; color: var(--white); font-weight: 700; }
+        .feature-text p { color: #d1d5db; }
+
+        /* =========================================
+           PROJECTS
+           ========================================= */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            position: relative;
+            height: 320px;
+            background-color: var(--secondary);
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        /* Specific Project Images */
+        .project-card:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1565514020176-db79237c1544?auto=format&fit=crop&q=80&w=600'); } /* SCADA */
+        .project-card:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=600'); } /* Electrical Cabinet */
+        .project-card:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1626154530046-5e580e037b3f?auto=format&fit=crop&q=80&w=600'); } /* CEMS/Chimney */
+        .project-card:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1518331326422-92a065cd8a35?auto=format&fit=crop&q=80&w=600'); } /* Water Treatment */
+        .project-card:nth-child(5) { background-image: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80&w=600'); } /* BMS */
+        .project-card:nth-child(6) { background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=600'); } /* Maintenance */
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0; top: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.95), rgba(47, 66, 59, 0.4));
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: 0.4s;
+            opacity: 1; /* Always show a bit of overlay for text */
+        }
+        
+        .project-card:hover .project-overlay {
+            background: linear-gradient(to top, rgba(211, 47, 47, 0.9), rgba(47, 66, 59, 0.6));
+        }
+
+        .project-title { color: var(--white); font-size: 1.2rem; margin-bottom: 5px; font-weight: 700; text-transform: uppercase; }
+        .project-cat { color: var(--brand-green); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 5px;}
+        .project-card:hover .project-cat { color: var(--white); }
+
+        /* =========================================
+           PROCESS
+           ========================================= */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute; top: 35px; left: 0; right: 0;
+            height: 3px; background: var(--border);
+            z-index: 1;
+        }
+
+        .step { position: relative; z-index: 2; text-align: center; flex: 1; }
+        .step-num {
+            width: 70px; height: 70px;
+            background: var(--white);
+            border: 3px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: 900; font-size: 1.4rem;
+            transition: 0.3s;
+        }
+        
+        .step:hover .step-num {
+            background: var(--brand-green);
+            border-color: var(--brand-green);
+            color: var(--white);
+        }
+        
+        .step h4 { margin-bottom: 10px; color: var(--primary); font-weight: 700;}
+
+        /* =========================================
+           CTA
+           ========================================= */
+        #cta {
+            background-color: var(--accent);
+            color: var(--white);
+            text-align: center;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        #cta h2 { font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; font-weight: 800; }
+
+        /* =========================================
+           BLOG (TECHNICAL KNOWLEDGE)
+           ========================================= */
+        .blog-layout { display: flex; gap: 40px; margin-top: 50px; }
+        .blog-main { flex: 3; }
+        .blog-sidebar { flex: 1; }
+
+        .blog-post {
+            background: var(--white);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .blog-meta { font-size: 0.85rem; color: var(--accent); margin-bottom: 10px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
+        .blog-title { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary); font-weight: 700; }
+        .blog-excerpt { margin-bottom: 20px; color: var(--text-light); }
+        .blog-content { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--border); }
+        
+        details summary { 
+            color: var(--primary); 
+            font-weight: 700; 
+            list-style: none;
+            outline: none;
+            text-decoration: underline;
+            text-decoration-color: var(--brand-green);
+        }
+        details summary:hover { color: var(--accent); }
+
+        .widget { margin-bottom: 30px; background: var(--light); padding: 25px; border-radius: 4px; border: 1px solid var(--border); }
+        .widget h4 { border-bottom: 3px solid var(--primary); padding-bottom: 10px; margin-bottom: 15px; color: var(--primary); font-weight: 800; }
+        .widget ul li { margin-bottom: 10px; border-bottom: 1px dotted #ccc; padding-bottom: 8px; }
+        .widget ul li a:hover { color: var(--accent); font-weight: 600; padding-left: 5px; }
+
+        /* =========================================
+           CONTACT & FOOTER
+           ========================================= */
+        .contact-form input, .contact-form textarea, .contact-form select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-family: inherit;
+            background: #f8fafc;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(47, 66, 59, 0.1);
+        }
+
+        footer {
+            background: var(--primary);
+            color: #d1d5db;
+            padding: 70px 0 30px;
+            font-size: 0.95rem;
+            border-top: 5px solid var(--accent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer h3 { color: var(--white); margin-bottom: 25px; font-weight: 700; text-transform: uppercase; font-size: 1.1rem; }
+        .footer ul li { margin-bottom: 12px; }
+        .footer ul li a:hover { color: var(--brand-green); padding-left: 5px; }
+        .copyright { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.85rem; }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 2.5rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .project-grid { grid-template-columns: repeat(2, 1fr); }
+            .blog-layout { flex-direction: column; }
+            .features-grid { grid-template-columns: 1fr; }
+            .process-steps { flex-direction: column; gap: 30px; }
+            .process-steps::before { display: none; }
+            .step-num { margin: 0 auto 10px; }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner { height: auto; flex-direction: column; padding: 15px 0; }
+            .main-nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; margin-top: 15px; }
+            .hero-btns { flex-direction: column; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-sub { border-left: none; padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container" style="display:flex; justify-content:space-between; flex-wrap: wrap; gap: 10px;">
+            <span><i>✉</i> infor.hailamec@gmail.com <span style="margin: 0 10px; opacity: 0.5;">|</span> <i>📞</i> (+84) 364 518 980</span>
+            <span><i>🕒</i> Giờ làm việc: Thứ 2 - Thứ 7 (8:00 - 17:00)</span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-inner">
+            <!-- Logo removed -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">Về chúng tôi</a></li>
+                    <li><a href="#services">Dịch vụ</a></li>
+                    <li><a href="#projects">Dự án</a></li>
+                    <li><a href="#knowledge-hub">Kiến thức kỹ thuật</a></li>
+                    <li><a href="#contact" class="btn btn-primary" style="padding: 10px 25px; border-radius: 4px;">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tagline">HẢI LAM ENGINEERING & CONSTRUCTION CO., LTD</span>
+                <h1 class="hero-title">Design & Build <br> Turnkey Solutions</h1>
+                <p class="hero-sub">Hải Lam E&C cung cấp giải pháp thiết kế – thi công – tích hợp hệ thống điện và điều khiển công nghiệp trọn gói cho nhà máy, khu công nghiệp và hạ tầng kỹ thuật.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Nhận tư vấn kỹ thuật</a>
+                    <a href="#services" class="btn btn-outline">Xem hồ sơ năng lực</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="section-title">Về Hải Lam E&C</h2>
+                    <p class="bold" style="font-size: 1.2rem; margin-bottom: 20px; color: var(--primary);">Từ thiết kế đến bàn giao, một đầu mối – một trách nhiệm – một kết quả.</p>
+                    <p style="margin-bottom: 25px; color: var(--text-light);">Chúng tôi không chỉ “lắp đặt thiết bị”. Chúng tôi giải quyết bài toán vận hành của bạn bằng tư duy kỹ thuật sâu sắc và cam kết chất lượng:</p>
+                    
+                    <ul style="margin-top: 20px; list-style: none; padding-left: 0; color: var(--text-main); font-weight: 500;">
+                        <li style="margin-bottom: 12px; display: flex; align-items: center;"><span style="color: var(--brand-green); margin-right: 10px; font-size: 1.2rem;">✔</span> Hệ thống chạy ổn định, bền bỉ</li>
+                        <li style="margin-bottom: 12px; display: flex; align-items: center;"><span style="color: var(--brand-green); margin-right: 10px; font-size: 1.2rem;">✔</span> Đạt tiêu chuẩn nghiệm thu & pháp lý</li>
+                        <li style="margin-bottom: 12px; display: flex; align-items: center;"><span style="color: var(--brand-green); margin-right: 10px; font-size: 1.2rem;">✔</span> Giảm downtime – tiết kiệm chi phí vận hành</li>
+                        <li style="margin-bottom: 12px; display: flex; align-items: center;"><span style="color: var(--brand-green); margin-right: 10px; font-size: 1.2rem;">✔</span> Dữ liệu minh bạch – quản lý tập trung</li>
+                    </ul>
+                </div>
+                <div class="col" style="display: flex; align-items: center; justify-content: center;">
+                    <!-- Real Industrial Meeting Image -->
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" alt="Kỹ sư Hải Lam E&C" style="border-radius: 4px; box-shadow: 20px 20px 0 var(--primary); width: 100%; height: 400px; object-fit: cover; border: 1px solid var(--border);">
+                </div>
+            </div>
+
+            <!-- STATS -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">12+</span>
+                    <span class="stat-label">Năm kinh nghiệm</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Dự án hoàn thành</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">45</span>
+                    <span class="stat-label">Kỹ sư chuyên môn</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Đạt chuẩn ISO/TCVN</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="section section-gray">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title center">Lĩnh Vực Hoạt Động</h2>
+                <p style="max-width: 700px; margin: 0 auto; color: var(--text-light);">Giải pháp trọn gói từ tư vấn, thiết kế, thi công đến bảo trì hệ thống.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-img" data-label="I&C / Automation"></div>
+                    <div class="service-body">
+                        <h3 class="service-title">Instrumentation & Control | Automation</h3>
+                        <div class="service-desc">
+                            <p><strong>Đo lường chính xác – điều khiển thông minh – vận hành tự động</strong></p>
+                            <ul>
+                                <li>Hệ thống đo mức, áp suất, lưu lượng, nhiệt độ, phân tích online</li>
+                                <li>PLC / SCADA / HMI / DCS / BMS / IoT Gateway</li>
+                                <li>Tủ điều khiển, tủ PLC, tủ truyền thông, mạng công nghiệp</li>
+                                <li>Thu thập dữ liệu – giám sát – cảnh báo – điều khiển từ xa</li>
+                            </ul>
+                            <span class="service-highlight">👉 Ứng dụng: Nhà máy sản xuất, xử lý nước, năng lượng, hạ tầng.</span>
+                        </div>
+                        <a href="#contact" class="service-link">Chi tiết &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-img" data-label="Electrical & ELV"></div>
+                    <div class="service-body">
+                        <h3 class="service-title">Electrical & ELV Systems</h3>
+                        <div class="service-desc">
+                            <p><strong>Hệ thống điện an toàn – ổn định – tối ưu năng lượng</strong></p>
+                            <ul>
+                                <li>Thiết kế & thi công hệ thống điện trung – hạ thế</li>
+                                <li>Trạm biến áp, tủ phân phối, MCC, DB, MSB</li>
+                                <li>Chiếu sáng, ổ cắm, ELV, CCTV, mạng, PA, Fire Alarm</li>
+                                <li>Đo kiểm, phân tích chất lượng điện năng</li>
+                            </ul>
+                            <span class="service-highlight">👉 Giải pháp trọn gói từ thiết kế → cung cấp → lắp đặt.</span>
+                        </div>
+                        <a href="#contact" class="service-link">Chi tiết &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-img" data-label="Quan trắc"></div>
+                    <div class="service-body">
+                        <h3 class="service-title">Environmental Monitoring Systems</h3>
+                        <div class="service-desc">
+                            <p><strong>Tuân thủ pháp lý – kết nối trực tiếp cơ quan quản lý</strong></p>
+                            <ul>
+                                <li>Quan trắc khí thải, nước thải, không khí, nước mặt</li>
+                                <li>Hệ thống CEMS / WQMS / AQMS</li>
+                                <li>Truyền dữ liệu tự động về Sở TNMT</li>
+                                <li>Lắp đặt – hiệu chuẩn – bảo trì – vận hành dài hạn</li>
+                            </ul>
+                            <span class="service-highlight">👉 Giúp doanh nghiệp an tâm vận hành, tránh rủi ro môi trường.</span>
+                        </div>
+                        <a href="#contact" class="service-link">Chi tiết &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-img" data-label="Design"></div>
+                    <div class="service-body">
+                        <h3 class="service-title">Engineering & Design Services</h3>
+                        <div class="service-desc">
+                            <p><strong>Thiết kế chuẩn kỹ thuật – hồ sơ chuyên nghiệp – thi công chính xác</strong></p>
+                            <ul>
+                                <li>Thiết kế MEPF / Electrical / I&C</li>
+                                <li>Shop drawing Revit / AutoCAD / BIM</li>
+                                <li>BOQ – tính toán – thuyết minh – hồ sơ thầu</li>
+                                <li>As-built & tài liệu hoàn công</li>
+                            </ul>
+                            <span class="service-highlight">👉 Tối ưu tiến độ thi công và giảm sai sót công trường.</span>
+                        </div>
+                        <a href="#contact" class="service-link">Chi tiết &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-us" class="section section-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="section-title">Tại Sao Chọn Hải Lam E&C?</h2>
+                    <p style="color: #94a3b8; margin-bottom: 30px;">Your Trusted Partner for Industrial Engineering Solutions.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">⚙</div>
+                            <div class="feature-text">
+                                <h4>Turnkey Solution</h4>
+                                <p>Thiết kế + thi công + tích hợp trọn gói. Giảm thiểu rủi ro và đầu mối quản lý.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Thực Chiến Công Nghiệp</h4>
+                                <p>Đội ngũ kỹ sư điện & tự động hóa giàu kinh nghiệm, hiểu sâu tiêu chuẩn & pháp lý Việt Nam.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-text">
+                                <h4>Tối Ưu Hiệu Quả</h4>
+                                <p>Tối ưu chi phí – tiến độ – hiệu quả vận hành. Cam kết chất lượng cao nhất.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🛡</div>
+                            <div class="feature-text">
+                                <h4>Đồng Hành Dài Hạn</h4>
+                                <p>Cam kết bảo trì dài hạn sau bàn giao. Hỗ trợ xử lý sự cố vận hành 24/7.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title center">Dự Án Tiêu Biểu</h2>
+            <div class="project-grid">
+                <!-- Each card has a specific background image in CSS -->
+                <div class="project-card">
+                    <div class="project-overlay">
+                        <div class="project-cat">SCADA System</div>
+                        <h3 class="project-title">Nhà máy Thép Hòa Phát</h3>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-overlay">
+                        <div class="project-cat">Tủ Điện MSB</div>
+                        <h3 class="project-title">KCN VSIP II Bình Dương</h3>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-overlay">
+                        <div class="project-cat">Quan Trắc CEMS</div>
+                        <h3 class="project-title">Nhiệt điện Vĩnh Tân</h3>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-overlay">
+                        <div class="project-cat">XL Nước Thải</div>
+                        <h3 class="project-title">Nhà máy Bia Heineken</h3>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-overlay">
+                        <div class="project-cat">BMS</div>
+                        <h3 class="project-title">Nhà máy Dược Hậu Giang</h3>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-overlay">
+                        <div class="project-cat">Bảo Trì</div>
+                        <h3 class="project-title">Nhà máy Xi măng Hà Tiên</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="section section-gray">
+        <div class="container">
+            <h2 class="section-title center">Quy Trình Làm Việc</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <h4>Tư Vấn & Khảo Sát</h4>
+                    <p style="font-size: 0.9rem; padding: 0 10px;">Đánh giá hiện trạng, lắng nghe nhu cầu và đề xuất giải pháp kỹ thuật sơ bộ.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <h4>Thiết Kế (Design)</h4>
+                    <p style="font-size: 0.9rem; padding: 0 10px;">Lên bản vẽ Shopdrawing, sơ đồ nguyên lý và danh mục vật tư chi tiết.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <h4>Thi Công (Build)</h4>
+                    <p style="font-size: 0.9rem; padding: 0 10px;">Lắp ráp tủ bảng điện, thi công thang máng cáp và đấu nối tại công trường.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">04</div>
+                    <h4>Nghiệm Thu (Commission)</h4>
+                    <p style="font-size: 0.9rem; padding: 0 10px;">Chạy thử I/O check, SAT, hướng dẫn vận hành và bàn giao tài liệu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section id="cta" class="section">
+        <div class="container">
+            <h2>Sẵn sàng nâng cấp nhà máy của bạn?</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">Liên hệ với kỹ sư của Hải Lam E&C để được tư vấn giải pháp tối ưu nhất.</p>
+            <a href="#contact" class="btn" style="background: white; color: var(--accent); border: none;">Gửi yêu cầu báo giá</a>
+        </div>
+    </section>
+
+    <!-- BLOG SECTION (SEO & TECHNICAL CONTENT) -->
+    <section id="knowledge-hub" class="section">
+        <div class="container">
+            <h2 class="section-title">Kiến Thức Kỹ Thuật</h2>
+            <p style="margin-bottom: 40px; color: var(--text-light);">Chia sẻ chuyên sâu về Tự động hóa, Điện công nghiệp và các tiêu chuẩn kỹ thuật.</p>
+
+            <div class="blog-layout">
+                <!-- Main Content Area -->
+                <div class="blog-main">
+                    
+                    <!-- POST 1 -->
+                    <article class="blog-post">
+                        <div class="blog-meta">Tự động hóa • Cơ bản</div>
+                        <h3 class="blog-title">1. PLC là gì? Ứng dụng PLC trong nhà máy công nghiệp</h3>
+                        <p class="blog-excerpt">PLC (Programmable Logic Controller) là bộ não của dây chuyền sản xuất hiện đại. Bài viết giải thích nguyên lý hoạt động và vai trò không thể thay thế của nó.</p>
+                        <details>
+                            <summary>Đọc chi tiết bài viết</summary>
+                            <div class="blog-content">
+                                <h4>Giới thiệu</h4>
+                                <p>Trong kỷ nguyên Công nghiệp 4.0, PLC (Programmable Logic Controller) đóng vai trò trung tâm. Khác với các hệ thống rơ-le cũ kỹ, PLC là thiết bị điều khiển lập trình được, cho phép thực hiện các thuật toán điều khiển logic, tuần tự, thời gian và đếm.</p>
+                                <h4>Cấu tạo và Nguyên lý</h4>
+                                <p>Một bộ PLC cơ bản bao gồm: Nguồn (Power Supply), CPU (Central Processing Unit), và các module Input/Output (I/O). Nguyên lý hoạt động dựa trên vòng quét (Scan cycle): Đọc tín hiệu đầu vào -> Thực thi chương trình -> Cập nhật đầu ra.</p>
+                                <h4>Ứng dụng thực tế</h4>
+                                <ul>
+                                    <li>Điều khiển dây chuyền đóng gói, chiết rót.</li>
+                                    <li>Hệ thống xử lý nước thải.</li>
+                                    <li>Điều khiển robot công nghiệp.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </article>
+
+                    <!-- POST 2 -->
+                    <article class="blog-post">
+                        <div class="blog-meta">Tự động hóa • Lựa chọn thiết bị</div>
+                        <h3 class="blog-title">2. Cách chọn PLC phù hợp cho dự án của bạn</h3>
+                        <p class="blog-excerpt">Lựa chọn sai PLC có thể dẫn đến lãng phí chi phí hoặc hệ thống không đáp ứng đủ công suất. Hướng dẫn chọn PLC dựa trên I/O, tốc độ xử lý và giao thức truyền thông.</p>
+                        <details>
+                            <summary>Đọc chi tiết bài viết</summary>
+                            <div class="blog-content">
+                                <h4>Xác định số lượng I/O</h4>
+                                <p>Bước đầu tiên là thống kê số lượng tín hiệu vào/ra (Digital/Analog). Dự phòng ít nhất 20% cho việc mở rộng trong tương lai.</p>
+                                <h4>Khả năng truyền thông</h4>
+                                <p>Nhà máy của bạn dùng chuẩn gì? Profinet, Modbus TCP/IP hay EtherCAT? PLC được chọn phải hỗ trợ native hoặc qua module mở rộng các giao thức này để kết nối với HMI, SCADA và Biến tần.</p>
+                            </div>
+                        </details>
+                    </article>
+
+                    <!-- POST 3 -->
+                    <article class="blog-post">
+                        <div class="blog-meta">Điện công nghiệp</div>
+                        <h3 class="blog-title">3. Cấu tạo và tiêu chuẩn thiết kế tủ điện điều khiển</h3>
+                        <p class="blog-excerpt">Tủ điện điều khiển là nơi chứa đựng các thiết bị đóng cắt và điều khiển. Thiết kế tủ điện cần tuân thủ về tản nhiệt, bố trí layout và tiêu chuẩn IP.</p>
+                        <details>
+                            <summary>Đọc chi tiết bài viết</summary>
+                            <div class="blog-content">
+                                <h4>Vỏ tủ điện</h4>
+                                <p>Thường làm bằng tôn sơn tĩnh điện hoặc Inox 304 cho môi trường ăn mòn. Độ dày tiêu chuẩn từ 1.2mm - 2.0mm. Cần chú ý cấp bảo vệ IP (IP54 cho trong nhà, IP65 cho ngoài trời).</p>
+                                <h4>Thiết bị bên trong</h4>
+                                <p>Bao gồm Aptomat (MCB, MCCB), Contactor, Relay nhiệt, PLC, Bộ nguồn 24VDC, Cầu đấu (Terminal). Việc bố trí phải đảm bảo khoảng cách tản nhiệt và dễ dàng đi dây (wiring).</p>
+                            </div>
+                        </details>
+                    </article>
+                    
+                    <!-- Added simplified entries for remaining posts to keep layout clean -->
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 4px; border: 1px solid #e2e8f0; margin-top: 20px;">
+                        <h4 style="color: var(--primary); margin-bottom: 15px;">Các chủ đề khác:</h4>
+                        <ul style="list-style: square; padding-left: 20px;">
+                            <li>Quy trình thiết kế tủ điện đạt chuẩn IEC</li>
+                            <li>SCADA là gì? Tại sao nhà máy cần hệ thống SCADA?</li>
+                            <li>PLC vs DCS: Khi nào nên dùng DCS?</li>
+                            <li>Hệ thống CEMS và quy định lắp đặt</li>
+                            <li>Quan trắc nước thải tự động (WQMS)</li>
+                            <li>Thiết kế trạm biến áp cho nhà máy</li>
+                            <li>MCC và hệ thống điều khiển động cơ</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <aside class="blog-sidebar">
+                    <div class="widget">
+                        <h4>Tìm kiếm</h4>
+                        <input type="text" placeholder="Tìm kiếm bài viết..." style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div class="widget">
+                        <h4>Danh Mục Kỹ Thuật</h4>
+                        <ul>
+                            <li><a href="#">Điện Công Nghiệp (12)</a></li>
+                            <li><a href="#">Tự Động Hóa PLC/SCADA (10)</a></li>
+                            <li><a href="#">Quan Trắc Môi Trường (5)</a></li>
+                            <li><a href="#">Kiến Thức M&E (3)</a></li>
+                        </ul>
+                    </div>
+                    <div class="widget section-dark" style="text-align: center; border-radius: 4px; background-color: var(--primary);">
+                        <h4 style="color: white; border-color: var(--brand-green);">Cần Tư Vấn Ngay?</h4>
+                        <p style="margin-bottom: 20px; font-size: 0.9rem; color: #e2e8f0;">Liên hệ kỹ sư của chúng tôi để được hỗ trợ miễn phí.</p>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%; background-color: var(--brand-green); border-color: var(--brand-green); color: var(--primary-dark);">GỌI: 0364 518 980</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section section-light" style="border-top: 1px solid var(--border);">
+        <div class="container">
+            <h2 class="section-title center">Liên Hệ Hợp Tác</h2>
+            <div class="row" style="margin-top: 40px;">
+                <div class="col">
+                    <div style="background: var(--primary); color: white; padding: 40px; border-radius: 4px; height: 100%; box-shadow: 0 10px 30px rgba(47, 66, 59, 0.2);">
+                        <h3 style="margin-bottom: 25px; border-bottom: 2px solid var(--brand-green); padding-bottom: 10px; display: inline-block;">Thông Tin Liên Hệ</h3>
+                        <p style="margin-bottom: 15px; font-size: 1.1rem; font-weight: 700;">CÔNG TY TNHH KỸ THUẬT HẢI LAM E&C</p>
+                        
+                        <div style="margin-top: 30px; line-height: 2;">
+                            <p>📍 <strong>Địa chỉ:</strong> Verosa Park, 39 Đường số 10, Khu phố 2, Thủ Đức, TP.HCM</p>
+                            <p>📞 <strong>Hotline:</strong> (+84) 364 518 980</p>
+                            <p>✉ <strong>Email:</strong> infor.hailamec@gmail.com</p>
+                            <p>📝 <strong>Mã số thuế:</strong> 0319184714</p>
+                            <!-- Website removed -->
+                        </div>
+                        
+                        <div style="margin-top: 40px; border-radius: 4px; overflow: hidden;">
+                            <a href="https://maps.app.goo.gl/QsK9bEF79fmG9irZ9" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center; background-color: var(--white); color: var(--primary); border-color: var(--white);">Xem bản đồ (Google Maps)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <form class="contact-form" style="padding: 20px;">
+                        <h3 style="color: var(--primary);">Gửi Yêu Cầu Kỹ Thuật</h3>
+                        <p style="margin-bottom: 25px; color: var(--text-light);">Vui lòng điền thông tin, kỹ sư của chúng tôi sẽ liên hệ lại trong 24h.</p>
+                        
+                        <input type="text" placeholder="Họ và tên của bạn" required>
+                        <input type="email" placeholder="Email công ty" required>
+                        <input type="tel" placeholder="Số điện thoại" required>
+                        <select>
+                            <option>Chọn dịch vụ quan tâm</option>
+                            <option>Tư vấn thiết kế tủ điện</option>
+                            <option>Hệ thống PLC/SCADA</option>
+                            <option>Quan trắc môi trường</option>
+                            <option>Bảo trì hệ thống</option>
+                        </select>
+                        <textarea rows="5" placeholder="Mô tả sơ bộ dự án hoặc yêu cầu kỹ thuật..."></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Gửi Yêu Cầu</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <!-- Logo removed -->
+                    <p style="line-height: 1.8;">Design & Build – Turnkey Engineering Solutions.<br>Đồng hành cùng sự phát triển bền vững của nền công nghiệp Việt Nam.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên Kết Nhanh</h3>
+                    <ul>
+                        <li><a href="#hero">Trang chủ</a></li>
+                        <li><a href="#about">Giới thiệu</a></li>
+                        <li><a href="#projects">Dự án tiêu biểu</a></li>
+                        <li><a href="#knowledge-hub">Tin tức kỹ thuật</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Dịch Vụ Chính</h3>
+                    <ul>
+                        <li><a href="#">Instrumentation & Control</a></li>
+                        <li><a href="#">Electrical & ELV Systems</a></li>
+                        <li><a href="#">Quan trắc môi trường</a></li>
+                        <li><a href="#">Tổng thầu M&E</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Hải Lam Engineering & Construction. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
