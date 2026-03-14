@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Pages -->
   <url>
     <loc>https://hailamec.com/</loc>
     <lastmod>2026-03-14</lastmod>
@@ -8,71 +7,28 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://hailamec.com/about</loc>
-    <lastmod>2026-03-14</lastmod>
+    <loc>https://hailamec.com/#about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hailamec.com/services</loc>
-    <lastmod>2026-03-14</lastmod>
+    <loc>https://hailamec.com/#services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hailamec.com/projects</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://hailamec.com/#projects</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hailamec.com/blog</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://hailamec.com/#technical</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hailamec.com/contact</loc>
-    <lastmod>2026-03-14</lastmod>
+    <loc>https://hailamec.com/#contact</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Service Subpages -->
-  <url>
-    <loc>https://hailamec.com/services/electrical-engineering</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hailamec.com/services/instrumentation-and-control</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hailamec.com/services/industrial-automation</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hailamec.com/services/environmental-monitoring</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hailamec.com/services/wastewater-monitoring-systems</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hailamec.com/services/cems-continuous-emission-monitoring-systems</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
