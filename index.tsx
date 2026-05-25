@@ -7,7 +7,17 @@ interface ChatTurn {
   text: string;
 }
 
-(function () {
+function initAIChatbot() {
+  // Make sure we do not load multiple times
+  const CONTAINER_ID = 'hailamec-ai-chat-root';
+  if (document.getElementById(CONTAINER_ID)) return;
+  if (!document.body) {
+      console.warn("[HAI LAM E&C AI] document.body not ready. Delaying mount...");
+      return;
+  }
+
+  console.log('[HAI LAM E&C AI] Initializing Chatbot Widget...');
+  
   // 1. Language Detection based on URL path
   const isEn = window.location.pathname.includes('/en/');
   const langKey = isEn ? 'en' : 'vi';
@@ -102,12 +112,6 @@ interface ChatTurn {
   } catch (e) {
     chatHistory = [];
   }
-
-  // Define DOM IDs
-  const CONTAINER_ID = 'hailamec-ai-chat-root';
-
-  // Make sure we do not load multiple times
-  if (document.getElementById(CONTAINER_ID)) return;
 
   // Create style element to load custom animations and overrides
   const styleEl = document.createElement('style');
@@ -636,4 +640,33 @@ interface ChatTurn {
     }
   });
 
-})();
+} // End of initAIChatbot
+
+// Ensure execution is safe regardless of when WP injects the script (async/defer)
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAIChatbot);
+} else {
+    initAIChatbot();
+}
+
+// Fallback for Flatsome / WP caching mechanisms that might inject the script late
+const aiObserver = new MutationObserver((mutations, obs) => {
+    if (document.body && !document.getElementById('hailamec-ai-chat-root')) {
+        initAIChatbot();
+        // Don't disconnect immediately if it was too early, but wait until it's actually placed
+        if (document.getElementById('hailamec-ai-chat-root')) {
+            obs.disconnect();
+        }
+    }
+});
+
+// Start observing as soon as possible
+if (document.body) {
+    aiObserver.observe(document.documentElement, { childList: true, subtree: true });
+} else {
+    document.addEventListener('DOMContentLoaded', () => {
+        if (document.body) {
+            aiObserver.observe(document.documentElement, { childList: true, subtree: true });
+        }
+    });
+}
