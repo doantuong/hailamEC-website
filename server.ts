@@ -11,17 +11,55 @@ const __dirname = path.dirname(__filename);
 const isProd = process.env.NODE_ENV === 'production';
 const PORT = 3000;
 
+// Basic in-memory rate limiter for anti-spam
+const rateLimitMap = new Map<string, { count: number, resetTime: number }>();
+const RATE_LIMIT_MAX = 5; // Max 5 requests per minute per IP for lead submission
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  let record = rateLimitMap.get(ip);
+  if (!record || now > record.resetTime) {
+    record = { count: 1, resetTime: now + 60000 };
+    rateLimitMap.set(ip, record);
+    return true;
+  }
+  if (record.count >= RATE_LIMIT_MAX) {
+    return false;
+  }
+  record.count++;
+  return true;
+}
+
+// Basic sanitize input to prevent simple XSS/Injection
+function sanitizeInput(str: any): string {
+  if (typeof str !== 'string') return '';
+  return str.replace(/[<>'"=\/]/g, '').trim(); // Remove basic HTML tags and scripts
+}
+
 async function startServer() {
   const app = express();
   app.use(express.json());
 
   // Gemini Client will be lazy-initialized inside the /api/chat route to avoid server crashes if key is omitted on startup.
 
-  // Local storage for B2B leads
+  // Local storage for B2B leads and inquiries
   const leadsFile = path.resolve(__dirname, 'leads.json');
+  
   app.post('/api/submit-lead', (req, res) => {
     try {
-      const { name, email, company, phone, notes, requirement, lang } = req.body;
+      const clientIp = req.ip || req.connection.remoteAddress || 'unknown';
+      if (!checkRateLimit(clientIp)) {
+        return res.status(429).json({ error: 'Too many requests. Anti-spam protection triggered.' });
+      }
+
+      let { name, email, company, phone, notes, requirement, service, lang, chatHistory } = req.body;
+      
+      name = sanitizeInput(name);
+      email = sanitizeInput(email);
+      phone = sanitizeInput(phone);
+      company = sanitizeInput(company);
+      notes = sanitizeInput(notes);
+      
       if (!name || (!email && !phone)) {
         return res.status(400).json({ error: 'Name and at least email or phone are required.' });
       }
@@ -34,24 +72,52 @@ async function startServer() {
           leads = [];
         }
       }
+      
+      // Calculate a basic AI Lead Score based on completeness and chat engagement
+      let leadScore = 50;
+      if (email && phone) leadScore += 10;
+      if (company) leadScore += 10;
+      if (notes && notes.length > 50) leadScore += 10;
+      if (chatHistory && chatHistory.length > 2) leadScore += 20;
+
       const newLead = {
         id: Date.now().toString(),
         name,
-        email,
-        company,
+        email: email || 'info@hailamec.com', 
+        company: company || 'Not provided',
         phone,
+        service: service || 'Engineering Consultation',
         notes,
         requirement,
+        chatHistory: chatHistory || [],
         lang: lang || 'vi',
+        leadScore,
+        status: 'New',
         createdAt: new Date().toISOString()
       };
       leads.push(newLead);
       fs.writeFileSync(leadsFile, JSON.stringify(leads, null, 2));
 
-      console.log('📝 [HAILAMEC Lead Submission Received]:', newLead);
+      // Simulate sending SMTP email notification to admin (info@hailamec.com)
+      console.log('✉️ [SMTP] Sending notification to info@hailamec.com : New Lead Captured -', newLead.name);
+
       return res.json({ success: true, message: 'Lead submitted successfully', leadId: newLead.id });
     } catch (err) {
       console.error('Error submitting lead:', err);
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
+  // Admin endpoint to fetch CRM leads
+  app.get('/api/leads', (req, res) => {
+    try {
+      let leads = [];
+      if (fs.existsSync(leadsFile)) {
+        leads = JSON.parse(fs.readFileSync(leadsFile, 'utf8'));
+      }
+      return res.json(leads.reverse());
+    } catch (err) {
+      console.error('Error reading leads:', err);
       return res.status(500).json({ error: 'Internal server error' });
     }
   });

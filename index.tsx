@@ -310,13 +310,13 @@ function initAIChatbot() {
           </a>
 
           <!-- Project Email -->
-          <a href="mailto:infor.hailamec@gmail.com" class="flex items-center gap-4 bg-white border border-slate-100 hover:border-slate-300 p-3.5 rounded-xl shadow-sm hover:translate-x-1 transition-all group">
+          <a href="mailto:info@hailamec.com" class="flex items-center gap-4 bg-white border border-slate-100 hover:border-slate-300 p-3.5 rounded-xl shadow-sm hover:translate-x-1 transition-all group">
             <div class="w-10 h-10 bg-slate-50 text-slate-600 flex items-center justify-center rounded-lg text-lg font-bold group-hover:bg-slate-900 group-hover:text-white transition-all">
               ✉
             </div>
             <div>
               <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-widest">${t.emailLabel}</span>
-              <span class="text-sm font-extrabold text-slate-800 truncate block">infor.hailamec@gmail.com</span>
+              <span class="text-sm font-extrabold text-slate-800 truncate block">info@hailamec.com</span>
             </div>
           </a>
         </div>
@@ -601,7 +601,7 @@ function initAIChatbot() {
       const r = await fetch('/api/submit-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, company, email, phone, requirement, notes, lang: langKey })
+        body: JSON.stringify({ name, company, email, phone, requirement, notes, lang: langKey, chatHistory })
       });
 
       if (!r.ok) throw new Error('Failed to register lead');

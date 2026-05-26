@@ -65,7 +65,7 @@ export default function AICopilot({ activeTool }: AICopilotProps) {
         
         // Lead generation / Proposal scenario
         if (lower.includes('name') || lower.includes('infor.hailamec') || lower.includes('email') || lower.includes('@')) {
-            return `Thank you. I have captured your contact information.\n\nOur engineering team will review the parameters and contact you at **infor.hailamec@gmail.com** with a formal quotation and technical method statement shortly.`;
+            return `Thank you. I have captured your contact information.\n\nOur engineering team will review the parameters and contact you at **info@hailamec.com** with a formal quotation and technical method statement shortly.`;
         }
         
         // Troubleshooting scenario
@@ -84,7 +84,7 @@ export default function AICopilot({ activeTool }: AICopilotProps) {
         }
         
         if (lower.includes('quote') || lower.includes('proposal') || lower.includes('contact')) {
-            return `I can help arrange an engineering consultation. Please provide:\n1. Your Name\n2. Company Name\n3. Email Address\n4. Project Description\n\nAlternatively, you can email us directly at **infor.hailamec@gmail.com**.`;
+            return `I can help arrange an engineering consultation. Please provide:\n1. Your Name\n2. Company Name\n3. Email Address\n4. Project Description\n\nAlternatively, you can email us directly at **info@hailamec.com**.`;
         }
 
         return `I am analyzing your technical requirements against our engineering knowledge base. Our Senior Engineers will review this complex query.\n\nWould you like to generate a preliminary Method Statement or BOQ for this setup? Please provide your email to proceed.`;
