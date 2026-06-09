@@ -5,6 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HAILAMEC | Industrial Automation & Electrical Engineering Contractor Vietnam</title>
     <meta name="description" content="HAILAMEC is a leading EPC contractor in Vietnam providing industrial automation, instrumentation engineering, electrical engineering, and environmental & wastewater monitoring systems (CEMS).">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "EngineeringBusiness",
+          "@id": "https://hailamec.com/#organization",
+          "name": "Hải Lam Engineering & Construction",
+          "alternateName": [
+            "Hai Lam",
+            "Hai Lam Engineering",
+            "Hai Lam Engineering & Construction",
+            "HAILAMEC"
+          ],
+          "url": "https://hailamec.com/",
+          "logo": "https://hailamec.com/wp-content/uploads/logo.png",
+          "description": "Leading expert in Instrument & Control, Electrical Panels, and EPC & Remote Engineering.",
+          "email": "info@hailamec.com",
+          "telephone": "+84-364-518-980",
+          "contactPoint": {
+             "@type": "ContactPoint",
+             "telephone": "+84-364-518-980",
+             "contactType": "Technical Sales & Support",
+             "email": "info@hailamec.com"
+          },
+          "areaServed": "Global",
+          "knowsAbout": [
+            "Instrument & Control",
+            "Environmental Monitoring",
+            "Electrical Systems",
+            "Control Panels",
+            "PLC/SCADA",
+            "EPC Integration"
+          ]
+        }
+      ]
+    }
+    </script>
     <meta name="keywords" content="industrial automation Vietnam, instrumentation engineering Vietnam, electrical engineering contractor Vietnam, industrial control system, CEMS monitoring system, wastewater monitoring system, flow measurement instrumentation, PLC automation solutions">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://hailamec.com/en/">
@@ -329,18 +367,18 @@
 
         .service-card {
             background: var(--white);
-            border-radius: 4px;
+            border-radius: 6px;
             overflow: hidden;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             display: flex;
             flex-direction: column;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border: 1px solid transparent;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
             border-color: var(--brand-green);
         }
 
@@ -628,6 +666,22 @@
             .footer-grid { grid-template-columns: 1fr; }
             .hero-sub { border-left: none; padding-left: 0; }
         }
+
+        /* =========================================
+           SCROLL ANIMATIONS
+           ========================================= */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            visibility: hidden;
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            will-change: opacity, visibility, transform;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
     </style>
 <link rel="stylesheet" href="/index.css">
 </head>
@@ -669,11 +723,11 @@
         <div class="container">
             <div class="hero-content">
                 <span class="hero-tagline">HẢI LAM ENGINEERING & CONSTRUCTION CO., LTD</span>
-                <h1 class="hero-title">International Engineering<br> & Automation Partner</h1>
-                <p class="hero-sub">Specializing in PLC/SCADA integration, Industrial EPC, and Remote Engineering Outsourcing. Supporting projects in Vietnam, the US, Australia, and Singapore with global technical standards.</p>
+                <h1 class="hero-title" style="font-size: 2.8rem;">Industrial Automation & Remote Engineering Partner for Global EPC Projects</h1>
+                <p class="hero-sub">We deliver high-precision engineering design, PLC/SCADA programming, and BIM modeling aligned with IEC/IEEE standards. Scale your engineering capacity while significantly reducing operational overhead.</p>
                 <div class="hero-btns">
-                    <a href="#contact" class="btn btn-primary">Request Engineering Support</a>
-                    <a href="#services" class="btn btn-outline">View Core Capabilities</a>
+                    <a href="#contact" class="btn btn-primary">Discuss Your Remote Project</a>
+                    <a href="#services" class="btn btn-outline">Explore Domestic EPC Solutions</a>
                 </div>
             </div>
         </div>
@@ -735,25 +789,18 @@
     <section id="services" class="section section-gray">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-title center">Core Technical Capabilities</h2>
-                <p style="max-width: 700px; margin: 0 auto; color: var(--text-light);">Scalable engineering solutions from remote CAD/BIM support to turnkey EPC execution.</p>
+                <h2 class="section-title center">Core Remote Engineering Capabilities</h2>
+                <p style="max-width: 700px; margin: 0 auto; color: var(--text-light);">Scalable outsourcing solutions designed for global system integrators and industrial contractors.</p>
             </div>
 
-            <div class="services-grid">
+            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));">
                 <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-img" data-label="PLC/SCADA & Automation"></div>
                     <div class="service-body">
-                        <h3 class="service-title">PLC/SCADA & Automation Outsourcing</h3>
+                        <h3 class="service-title">PLC/SCADA Architecture & Programming</h3>
                         <div class="service-desc">
-                            <p><strong>Scalable automation logic & control system integration</strong></p>
-                            <ul>
-                                <li>PLC/HMI Programming (Siemens, Rockwell, Schneider)</li>
-                                <li>SCADA / DCS system architecture & deployment</li>
-                                <li>Control panel design and Factory Acceptance Testing (FAT)</li>
-                                <li>Legacy system migration and remote troubleshooting</li>
-                            </ul>
-                            <span class="service-highlight">👉 Delivering complex code logic for international production lines.</span>
+                            <p style="line-height: 1.6;">Complete code development, FAT execution, logic simulation, and HMI/SCADA configurations for leading platforms including Siemens, Rockwell/Allen-Bradley, and Schneider Electric.</p>
                         </div>
                         <a href="#contact" class="service-link">Discuss your project &rarr;</a>
                     </div>
@@ -761,18 +808,11 @@
 
                 <!-- Service 2 -->
                 <div class="service-card">
-                    <div class="service-img" data-label="Turnkey EPC"></div>
+                    <div class="service-img" data-label="Remote Engineering / BIM"></div>
                     <div class="service-body">
-                        <h3 class="service-title">Turnkey Industrial EPC Execution</h3>
+                        <h3 class="service-title">Remote CAD Drafting & Revit 3D/BIM</h3>
                         <div class="service-desc">
-                            <p><strong>Safe, compliant, and energy-optimized electrical deployments</strong></p>
-                            <ul>
-                                <li>End-to-end electrical design and site installation</li>
-                                <li>Medium & Low Voltage switchgear, MCC, and MSB panels</li>
-                                <li>Industrial ELV, CCTV, Networking, and Fire Alarm systems</li>
-                                <li>Power quality analysis and harmonic mitigation</li>
-                            </ul>
-                            <span class="service-highlight">👉 Zero-compromise local execution for FDI manufacturing plants.</span>
+                            <p style="line-height: 1.6;">Precision electrical drafting, spatial 3D modeling, and clash detection to support complex industrial constructions, substations, and MEP infrastructure.</p>
                         </div>
                         <a href="#contact" class="service-link">Discuss your project &rarr;</a>
                     </div>
@@ -780,18 +820,11 @@
 
                 <!-- Service 3 -->
                 <div class="service-card">
-                    <div class="service-img" data-label="I&C and CEMS"></div>
+                    <div class="service-img" data-label="Turnkey EPC"></div>
                     <div class="service-body">
-                        <h3 class="service-title">Instrumentation, Control & Monitoring Systems</h3>
+                        <h3 class="service-title">Panel Design & Shop Drawings</h3>
                         <div class="service-desc">
-                            <p><strong>Advanced process instrumentation and control solutions for industrial automation and operational reliability.</strong></p>
-                            <ul>
-                                <li>Continuous Emission Monitoring Systems (CEMS & WQMS)</li>
-                                <li>Flow, pressure, level, and temperature sensor calibration</li>
-                                <li>Automatic data transmission to regulatory databases</li>
-                                <li>Long-term instrumentation maintenance and O&M</li>
-                            </ul>
-                            <span class="service-highlight">👉 Ensuring operational data integrity and legal compliance.</span>
+                            <p style="line-height: 1.6;">Comprehensive low and medium voltage switchgear layouts, General Arrangement (GA) drawings, and electrical schematics optimized for global manufacturability.</p>
                         </div>
                         <a href="#contact" class="service-link">Discuss your project &rarr;</a>
                     </div>
@@ -799,58 +832,13 @@
 
                 <!-- Service 4 -->
                 <div class="service-card">
-                    <div class="service-img" data-label="Remote Engineering / BIM"></div>
+                    <div class="service-img" data-label="I&C and CEMS"></div>
                     <div class="service-body">
-                        <h3 class="service-title">Remote Engineering & BIM/CAD</h3>
+                        <h3 class="service-title">BOQ Takeoff & As-built Documentation</h3>
                         <div class="service-desc">
-                            <p><strong>A dedicated offshore extension of your in-house engineering team</strong></p>
-                            <ul>
-                                <li>BIM / Revit MEP 3D modeling and clash detection</li>
-                                <li>Electrical AutoCAD / EPLAN drafting and shopdrawings</li>
-                                <li>Bill of Quantities (BOQ) and technical specification writing</li>
-                                <li>As-built documentation and remote project estimation</li>
-                            </ul>
-                            <span class="service-highlight">👉 Reducing your overhead while maintaining global engineering standards.</span>
+                            <p style="line-height: 1.6;">Accurate material estimations derived from conceptual designs, alongside high-fidelity as-built drawing generation for seamless project handover and compliance.</p>
                         </div>
                         <a href="#contact" class="service-link">Discuss your project &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="service-card">
-                    <div class="service-img" data-label="Industrial Maintenance"></div>
-                    <div class="service-body">
-                        <h3 class="service-title">Plant Reliability & Maintenance</h3>
-                        <div class="service-desc">
-                            <p><strong>Predictive, Preventive, and Long-Term Value Protection</strong></p>
-                            <ul>
-                                <li>Annual Maintenance Contracts (AMC) for factories</li>
-                                <li>Electrical system audits and power quality inspections</li>
-                                <li>Instrumentation calibration (Flow, Pressure, Temperature)</li>
-                                <li>MCC & LV panel preventative maintenance and retrofits</li>
-                            </ul>
-                            <span class="service-highlight">👉 Securing continuous operation and maximizing equipment lifespan.</span>
-                        </div>
-                        <a href="#contact" class="service-link">Request Plant Inspection &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="service-card">
-                    <div class="service-img" data-label="Automation Diagnostics"></div>
-                    <div class="service-body">
-                        <h3 class="service-title">24/7 Troubleshooting & Diagnostics</h3>
-                        <div class="service-desc">
-                            <p><strong>Emergency corrective maintenance and system recovery</strong></p>
-                            <ul>
-                                <li>24/7 rapid response for PLC and control system breakdowns</li>
-                                <li>Variable Frequency Drive (VFD) fault diagnostics</li>
-                                <li>Industrial network troubleshooting (Profinet, Modbus, Ethernet/IP)</li>
-                                <li>Factory shutdown support and fast-track parts replacement</li>
-                            </ul>
-                            <span class="service-highlight">👉 Minimizing costly downtime during critical production cycles.</span>
-                        </div>
-                        <a href="#contact" class="service-link">Get Emergency Support &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -874,36 +862,29 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2 class="section-title">Why Choose HAILAMEC?</h2>
-                    <p style="color: #94a3b8; margin-bottom: 30px;">Your Trusted Partner for Industrial Engineering Solutions.</p>
+                    <h2 class="section-title">Why Partner With HAILAMEC?</h2>
+                    <p style="color: #94a3b8; margin-bottom: 30px;">Global standards, optimized overhead, and seamless integration.</p>
                     
-                    <div class="features-grid">
-                        <div class="feature-item">
-                            <div class="feature-icon">⚙</div>
+                    <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                        <div class="feature-item" style="flex-direction: column; align-items: flex-start;">
+                            <div class="feature-icon" style="margin-bottom: 10px;">⚙️</div>
                             <div class="feature-text">
-                                <h4>Turnkey Solution</h4>
-                                <p>Comprehensive design + build + integration. Minimizing risks and management interfaces.</p>
+                                <h4 style="margin-bottom: 15px;">Cost-Effective Offshore Engineering</h4>
+                                <p style="line-height: 1.6;">Leverage top-tier engineering talent from Vietnam. Optimize your project budget and expand your technical bandwidth rapidly, without compromising on quality or turnaround time.</p>
                             </div>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">✓</div>
+                        <div class="feature-item" style="flex-direction: column; align-items: flex-start;">
+                            <div class="feature-icon" style="margin-bottom: 10px;">📏</div>
                             <div class="feature-text">
-                                <h4>Industrial Practical Experience</h4>
-                                <p>Experienced electrical & automation engineers, deeply understanding Vietnamese standards & regulations.</p>
+                                <h4 style="margin-bottom: 15px;">International Standards Compliance</h4>
+                                <p style="line-height: 1.6;">Our technical deliverables strictly adhere to rigorous global protocols including IEC, IEEE, and UL, ensuring seamless integration into your local regulatory frameworks.</p>
                             </div>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">⚡</div>
+                        <div class="feature-item" style="flex-direction: column; align-items: flex-start;">
+                            <div class="feature-icon" style="margin-bottom: 10px;">🌐</div>
                             <div class="feature-text">
-                                <h4>Efficiency Optimization</h4>
-                                <p>Optimizing cost – schedule – operational efficiency. Committing to the highest quality.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">🛡</div>
-                            <div class="feature-text">
-                                <h4>Long-term Partnership</h4>
-                                <p>Long-term maintenance commitment after handover. 24/7 operational troubleshooting support.</p>
+                                <h4 style="margin-bottom: 15px;">Seamless Communication & Workflow</h4>
+                                <p style="line-height: 1.6;">Fluent English-speaking engineers utilizing agile deployment and modern collaboration tools. We integrate directly into your internal processes as an extension of your in-house team.</p>
                             </div>
                         </div>
                     </div>
@@ -1209,6 +1190,29 @@ function switchLang(lang) {
     const currentHash = window.location.hash;
     window.location.href = '/' + lang + '/' + currentHash;
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.service-card, .step');
+    animatedElements.forEach((el, index) => {
+        el.classList.add('fade-in-section');
+        el.style.transitionDelay = `${(index % 4) * 100}ms`;
+        observer.observe(el);
+    });
+});
 </script>
 
 </body>
