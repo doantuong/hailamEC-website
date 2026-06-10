@@ -815,7 +815,7 @@
     <!-- HEADER -->
     <header class="site-header">
         <div class="container header-inner">
-            <a href="/" class="logo-box">
+            <a href="%BASE_URL%" class="logo-box">
                 <img src="%BASE_URL%hailam-ec-logo.png" alt="Hai Lam Engineering & Construction Logo" />
             </a>
 
@@ -831,7 +831,7 @@
                 <a href="#projects" class="nav-link">Dự án</a>
                 <a href="#profile" class="nav-link">Hồ sơ năng lực</a>
                 <a href="#technical" class="nav-link">Kiến thức kỹ thuật</a>
-                <a href="/tools" class="nav-link" style="color: var(--brand-green);">Công Cụ Kỹ Thuật (SaaS)</a>
+                <a href="%BASE_URL%tools.html" class="nav-link" style="color: var(--brand-green);">Công Cụ Kỹ Thuật (SaaS)</a>
                 <a href="#contact" class="btn btn-primary contact-button">Liên hệ</a>
             </nav>
         </div>
@@ -1490,7 +1490,7 @@
 <script>
 function switchLang(lang) {
     const currentHash = window.location.hash;
-    window.location.href = '/' + lang + '/' + currentHash;
+    window.location.href = '%BASE_URL%' + lang + '/' + currentHash;
 }
 
 document.addEventListener("DOMContentLoaded", function() {

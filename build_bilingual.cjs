@@ -52,7 +52,7 @@ const switchLangScript = `
 <script>
 function switchLang(lang) {
     const currentHash = window.location.hash;
-    window.location.href = '/' + lang + '/' + currentHash;
+    window.location.href = '%BASE_URL%' + lang + '/' + currentHash;
 }
 </script>
 `;
