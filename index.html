@@ -1034,11 +1034,60 @@
     <section id="smart-dashboard" class="section" style="background-color: #0f172a; border-top: 1px solid #1e293b; border-bottom: 5px solid var(--brand-green);">
         <div class="container">
             <div class="text-center" style="margin-bottom: 40px;">
-                <h2 class="section-title center" style="color: var(--brand-green);">Live Industrial Dashboard & Digital Twin</h2>
-                <p style="max-width: 800px; margin: 0 auto; color: #94a3b8; font-size: 1.1rem;">Experience our real-time IIoT capabilities. We integrate PLC architectures into centralized factory monitoring systems for OEE, Energy Tracking, and Predictive Maintenance.</p>
+                <h2 class="section-title center" style="color: var(--brand-green);">Giải pháp SCADA/IIoT Dashboard & Digital Twin cho Nhà máy</h2>
+                <p style="max-width: 800px; margin: 0 auto; color: #94a3b8; font-size: 1.1rem; line-height: 1.6;">HẢI LAM E&C thiết kế và tích hợp dashboard giám sát công nghiệp, kết nối dữ liệu từ PLC/SCADA/DCS, thiết bị đo lường và hệ thống điều khiển nhằm hỗ trợ vận hành, cảnh báo, phân tích năng lượng và bảo trì.</p>
             </div>
             
-            <div id="dashboard-demo-root"></div>
+            <div class="dashboard-features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 40px;">
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--brand-green);">🖥️</span> SCADA Monitoring
+                    </h4>
+                    <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Giám sát trạng thái hoạt động của toàn bộ dây chuyền sản xuất theo thời gian thực với giao diện HMI/SCADA trực quan.</p>
+                </div>
+                
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--brand-green);">📡</span> IIoT Data Collection
+                    </h4>
+                    <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Thu thập dữ liệu từ đa dạng thiết bị đo lường, sensor và hệ thống điều khiển thông qua các giao thức công nghiệp chuẩn.</p>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--brand-green);">⚡</span> Energy Tracking
+                    </h4>
+                    <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Phân tích biểu đồ tiêu thụ điện năng, hỗ trợ ra quyết định tối ưu hóa năng lượng và giảm thiểu chi phí vận hành.</p>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--brand-green);">🚨</span> Alarm & Event Management
+                    </h4>
+                    <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Hệ thống cảnh báo sớm qua màn hình, SMS hoặc Email giúp phản ứng nhanh với các sự cố bất thường.</p>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--brand-green);">🏭</span> Equipment Status
+                    </h4>
+                    <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Hiển thị trực quan tình trạng thiết bị (Running, Stopped, Faulted) giúp người vận hành nắm bắt tổng thể nhà máy.</p>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--brand-green);">🔧</span> Maintenance Insights
+                    </h4>
+                    <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Lưu trữ nhật ký vận hành và cung cấp dữ liệu hỗ trợ dự đoán, lập kế hoạch bảo trì phòng ngừa (Preventive Maintenance).</p>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <p style="color: #64748b; font-size: 0.85rem; font-style: italic; margin-bottom: 24px;">
+                    * Hình ảnh minh họa giải pháp dashboard công nghiệp, không phải dữ liệu vận hành trực tiếp.
+                </p>
+                <a href="#contact" class="btn btn-primary" style="background-color: var(--brand-green); color: #0f172a; border: none; padding: 12px 30px; font-weight: bold; text-transform: uppercase;">Tư vấn giải pháp Dashboard</a>
+            </div>
         </div>
     </section>
 
@@ -1436,7 +1485,7 @@
     </footer>
 
 <script type="module" src="/index.tsx"></script>
-<script type="module" src="/dashboard-main.tsx"></script>
+
 
 <script>
 function switchLang(lang) {

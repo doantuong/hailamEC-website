@@ -39,3 +39,10 @@ body {
 .animate-fade-in-up {
   animation: fade-in-up 0.5s ease-out forwards;
 }
+
+.project-card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}

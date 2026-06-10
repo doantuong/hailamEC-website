@@ -7,6 +7,11 @@ export default function ProjectsSection({ lang }: { lang: 'vi' | 'en' }) {
   const categories = ['All', ...new Set(projects.map(p => p.category))];
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.onerror = null; // Prevent infinite loop
+    e.currentTarget.src = `${import.meta.env.BASE_URL}projects/default-industrial.jpg`;
+  };
+
   return (
     <div className="max-w-7xl mx-auto my-16 px-4">
       <div className="text-center mb-12">
@@ -39,11 +44,13 @@ export default function ProjectsSection({ lang }: { lang: 'vi' | 'en' }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProjects.map((project) => (
           <div key={project.id} className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow group flex flex-col h-full">
-            <div className="h-48 overflow-hidden relative">
+            <div className="h-[220px] overflow-hidden relative">
                <img 
-                 src={project.image} 
-                 alt={lang === 'vi' ? project.titleVi : project.titleEn} 
-                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 src={`${import.meta.env.BASE_URL}${project.image}`}
+                 alt={lang === 'vi' ? project.titleVi : project.titleEn}
+                 loading="lazy"
+                 onError={handleImageError}
+                 className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-500 project-card-image"
                />
                <div className="absolute top-4 left-4 bg-[#0AE340] text-[#1e2b26] text-xs font-bold px-3 py-1 rounded shadow uppercase">
                  {project.category}

@@ -962,11 +962,60 @@
     <section id="smart-dashboard" class="section" style="background-color: #0f172a; border-top: 1px solid #1e293b; border-bottom: 5px solid var(--brand-green);">
         <div class="container">
             <div class="text-center" style="margin-bottom: 40px;">
-                <h2 class="section-title center" style="color: var(--brand-green);">Live Industrial Dashboard & Digital Twin</h2>
-                <p style="max-width: 800px; margin: 0 auto; color: #94a3b8; font-size: 1.1rem;">Experience our real-time IIoT capabilities. We integrate PLC architectures into centralized factory monitoring systems for OEE, Energy Tracking, and Predictive Maintenance.</p>
+                <h2 class="section-title center" style="color: var(--brand-green);">SCADA/IIoT Dashboard & Digital Twin Solutions for Factories</h2>
+                <p style="max-width: 800px; margin: 0 auto; color: #94a3b8; font-size: 1.1rem; line-height: 1.6;">HAI LAM E&C designs and integrates industrial monitoring dashboards, connecting data from PLC/SCADA/DCS, instrumentation, and control systems to support operations, alarming, energy analysis, and maintenance.</p>
             </div>
             
-            <div id="dashboard-demo-root"></div>
+            <div class="dashboard-features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 40px;">
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--brand-green);">🖥️</span> SCADA Monitoring
+                    </h4>
+                    <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Monitor real-time operational status of entire production lines through intuitive HMI/SCADA interfaces.</p>
+                </div>
+                
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--brand-green);">📡</span> IIoT Data Collection
+                    </h4>
+                    <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Collect data from a wide variety of instruments, sensors, and control systems via standard industrial protocols.</p>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--brand-green);">⚡</span> Energy Tracking
+                    </h4>
+                    <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Analyze power consumption charts, helping operators make decisions to optimize energy usage and reduce costs.</p>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--brand-green);">🚨</span> Alarm & Event Management
+                    </h4>
+                    <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Early warning systems via display, SMS, or Email enabling rapid response to abnormal operational events.</p>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--brand-green);">🏭</span> Equipment Status
+                    </h4>
+                    <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Visually display equipment status (Running, Stopped, Faulted) helping operators grasp the overall plant overview.</p>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--brand-green);">🔧</span> Maintenance Insights
+                    </h4>
+                    <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Store operational logs and provide data to support predictive insights and preventive maintenance planning.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <p style="color: #64748b; font-size: 0.85rem; font-style: italic; margin-bottom: 24px;">
+                    * Illustration of industrial dashboard solution, not live operational data.
+                </p>
+                <a href="#contact" class="btn btn-primary" style="background-color: var(--brand-green); color: #0f172a; border: none; padding: 12px 30px; font-weight: bold; text-transform: uppercase;">Consult Dashboard Solutions</a>
+            </div>
         </div>
     </section>
 
@@ -1357,7 +1406,7 @@
     </footer>
 
 <script type="module" src="/index.tsx"></script>
-<script type="module" src="/dashboard-main.tsx"></script>
+
 
 <script>
 function switchLang(lang) {
