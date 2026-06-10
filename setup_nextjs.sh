@@ -40,7 +40,7 @@ export default function FloatingContact() {
         </a>
 
         {/* MESSENGER */}
-        <a href="https://m.me/700249799848085" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-12 h-12 bg-[#0084ff] text-white rounded-full shadow-lg hover:scale-110 transition-transform">
+        <a href="https://m.me/hailamengineering" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-12 h-12 bg-[#0084ff] text-white rounded-full shadow-lg hover:scale-110 transition-transform">
           <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path d="M12 2C6.36 2 2 6.14 2 11.24c0 2.91 1.42 5.51 3.65 7.18.19.14.31.36.31.6l.02 2.21c.01.44.47.74.87.55l2.45-1.18c.2-.1.43-.11.64-.04.65.2 1.34.31 2.06.31 5.64 0 10-4.14 10-9.24S17.64 2 12 2zm1.09 12.31l-2.6-2.77-5.07 2.77 5.57-5.92 2.68 2.77 4.99-2.77-5.57 5.92z"/></svg>
         </a>
 

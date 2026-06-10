@@ -26,14 +26,54 @@ const DashboardDemo: React.FC = () => {
         }
     }, [mainTab]);
 
+    const getMockLeads = () => [
+        {
+            id: '1',
+            createdAt: new Date(Date.now() - 86400000).toISOString(),
+            name: 'Nguyen Van A',
+            company: 'ABC Manufacturing',
+            email: 'nva@abc.com',
+            phone: '0901234567',
+            service: 'Turnkey EPC Project',
+            notes: 'We need a complete MEP and SCADA design for our new facility.',
+            leadScore: 85,
+            status: 'Quotes Sent',
+            chatHistory: [
+                { role: 'model', text: 'Welcome to HAI LAM E&C Engineering Desk. I am your Digital Technical Consultant.' },
+                { role: 'user', text: 'I need a SCADA system for my plant.' },
+                { role: 'model', text: 'Thank you. What PLC brand do you prefer and what is the estimated I/O count?' }
+            ]
+        },
+        {
+            id: '2',
+            createdAt: new Date(Date.now() - 172800000).toISOString(),
+            name: 'Trần Thị B',
+            company: 'XYZ Energy',
+            email: 'ttb@xyz.com',
+            phone: '',
+            service: 'CEMS Monitoring',
+            notes: 'Looking for a continuous emissions monitoring system (CEMS).',
+            leadScore: 60,
+            status: 'New',
+            chatHistory: []
+        }
+    ];
+
     const fetchLeads = async () => {
         setLoadingLeads(true);
         try {
             const res = await fetch('/api/leads');
-            const data = await res.json();
-            setLeads(data);
+            const contentType = res.headers.get("content-type");
+            if (contentType && contentType.includes("application/json")) {
+                const data = await res.json();
+                setLeads(data);
+            } else {
+                console.warn('API /api/leads returned non-JSON. Falling back to mock data for static deployment.');
+                setLeads(getMockLeads());
+            }
         } catch (e) {
-            console.error('Failed to fetch leads', e);
+            console.error('Failed to fetch leads, falling back to static data', e);
+            setLeads(getMockLeads());
         } finally {
             setLoadingLeads(false);
         }

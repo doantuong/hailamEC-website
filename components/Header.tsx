@@ -1,23 +1,36 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b shadow-sm">
+      {/* Top Bar for Contact Info */}
+      <div className="hidden lg:flex w-full bg-blue-900 text-white py-2">
+        <div className="container mx-auto px-4 flex justify-end items-center space-x-6 text-sm">
+          <span className="flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:info@hailamec.com" className="hover:text-blue-200 transition-colors">info@hailamec.com</a>
+          </span>
+          <span className="flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <a href="tel:+84364518980" className="hover:text-blue-200 transition-colors">+84 364 518 980</a>
+          </span>
+        </div>
+      </div>
+      
+      {/* Main Header */}
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <Image 
-            src="/logo-hai-lam.png" 
-            alt="LK" 
-            width={200} 
-            height={60} 
-            className="object-contain" 
-            priority 
-          />
+          <div className="w-[95px] h-[60px] md:w-[115px] md:h-[70px] lg:w-[130px] lg:h-[78px] px-2 py-1 bg-white flex flex-col justify-center items-center">
+            <img 
+              src="/hailam-ec-logo.png" 
+              alt="Hai Lam Engineering & Construction Logo" 
+              className="max-w-full max-h-[52px] md:max-h-[60px] lg:max-h-[66px] object-contain" 
+            />
+          </div>
         </Link>
 
         {/* Navigation - Center */}

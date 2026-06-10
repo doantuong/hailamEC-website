@@ -1,0 +1,62 @@
+export const projects = [
+  {
+    id: "plc-scada-system",
+    titleVi: "Tích hợp hệ thống PLC/SCADA cho nhà máy",
+    titleEn: "PLC/SCADA System Integration for Factory",
+    category: "PLC/SCADA",
+    industryVi: "Sản xuất công nghiệp",
+    industryEn: "Industrial Manufacturing",
+    location: "Vietnam",
+    scopeVi: "Thiết kế, lập trình PLC, cấu hình SCADA, chạy thử và bàn giao.",
+    scopeEn: "PLC programming, SCADA configuration, commissioning and handover.",
+    resultVi: "Hệ thống vận hành ổn định, hỗ trợ giám sát tập trung và bảo trì thuận tiện.",
+    resultEn: "Stable operation with centralized monitoring and easier maintenance.",
+    tags: ["PLC", "SCADA", "Automation"],
+    image: "https://images.unsplash.com/photo-1565514020176-db79237c1544?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    id: "wqms-cems-monitoring",
+    titleVi: "Giải pháp quan trắc CEMS/WQMS",
+    titleEn: "CEMS/WQMS Monitoring Solution",
+    category: "I&C / Monitoring",
+    industryVi: "Môi trường & Utilities",
+    industryEn: "Environment & Utilities",
+    location: "Vietnam",
+    scopeVi: "Tích hợp thiết bị đo, truyền dữ liệu, tủ điều khiển và giám sát hệ thống.",
+    scopeEn: "Instrument integration, data transmission, control panel and monitoring.",
+    resultVi: "Hỗ trợ theo dõi dữ liệu quan trắc và đáp ứng yêu cầu vận hành.",
+    resultEn: "Supports monitoring data visibility and operational requirements.",
+    tags: ["CEMS", "WQMS", "I&C"],
+    image: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    id: "electrical-cabinet-design",
+    titleVi: "Thiết kế & Thi công Tủ điện Công nghiệp",
+    titleEn: "Industrial Electrical Cabinet Design & Construction",
+    category: "Electrical EPC",
+    industryVi: "Sản xuất công nghiệp",
+    industryEn: "Industrial Manufacturing",
+    location: "Vietnam",
+    scopeVi: "Thiết kế chi tiết, chế tạo tủ điện MSB/MCC, lắp đặt hiện trường.",
+    scopeEn: "Detailed design, MSB/MCC panel manufacturing, site installation.",
+    resultVi: "Hệ thống điện an toàn, phân phối nguồn hiệu quả và tuân thủ tiêu chuẩn IEC.",
+    resultEn: "Safe electrical system, efficient power distribution, and IEC compliance.",
+    tags: ["Electrical Panel", "MSB", "MCC"],
+    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+     id: "bms-remote-engineering",
+     titleVi: "Hệ thống Quản lý Tòa nhà (BMS)",
+     titleEn: "Building Management System (BMS)",
+     category: "Remote Engineering",
+     industryVi: "Thương mại & Dân dụng",
+     industryEn: "Commercial & Utilities",
+     location: "International",
+     scopeVi: "Thiết kế cấu hình, mô hình BIM, hỗ trợ kỹ thuật từ xa.",
+     scopeEn: "Configuration design, BIM modeling, remote technical support.",
+     resultVi: "Tiết kiệm năng lượng, đơn giản hóa quy trình vận hành và cải thiện chi phí.",
+     resultEn: "Energy savings, simplified operational processes, and improved costs.",
+     tags: ["BMS", "BIM", "Remote Engineering"],
+     image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80&w=600"
+  }
+];

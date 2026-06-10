@@ -225,7 +225,7 @@ export default function FloatingContact() {
       id: "messenger",
       label: "Messenger",
       icon: <MessageSquare className="w-5 h-5 text-white" />,
-      link: "https://m.me/700249799848085",
+      link: "https://m.me/hailamengineering",
       bgColor: "bg-[#0084ff]",
     },
     {
