@@ -26,9 +26,12 @@ export default function Header() {
         <Link href="/" className="flex items-center">
           <div className="w-[95px] h-[60px] md:w-[115px] md:h-[70px] lg:w-[130px] lg:h-[78px] px-2 py-1 bg-white flex flex-col justify-center items-center">
             <img 
-              src={`${import.meta.env.BASE_URL}hailam-ec-logo.png`} 
+              src={`/hailam-ec-logo.png`} 
               alt="Hai Lam Engineering & Construction Logo" 
-              className="max-w-full max-h-[52px] md:max-h-[60px] lg:max-h-[66px] object-contain" 
+              className="site-logo max-w-full max-h-[52px] md:max-h-[60px] lg:max-h-[66px] object-contain" 
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
             />
           </div>
         </Link>

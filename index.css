@@ -54,3 +54,17 @@ body {
   object-fit: cover;
   display: block;
 }
+
+.site-logo {
+  display: block;
+  width: auto;
+  max-width: 150px;
+  max-height: 72px;
+  object-fit: contain;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
