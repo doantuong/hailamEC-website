@@ -14,8 +14,15 @@ export default function ProjectsSection({ lang }: { lang: 'vi' | 'en' }) {
   };
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.currentTarget.onerror = null; // Prevent infinite loop
-    e.currentTarget.src = `${import.meta.env.BASE_URL}projects/default-industrial.jpg`;
+    const target = e.currentTarget;
+    const defaultSrc = `${import.meta.env.BASE_URL}projects/default-industrial.jpg`;
+    
+    if (target.src.endsWith(defaultSrc)) {
+      // If the default image also fails, hide the image completely so the gradient shows
+      target.style.display = 'none';
+    } else {
+      target.src = defaultSrc;
+    }
   };
 
   return (
@@ -50,15 +57,15 @@ export default function ProjectsSection({ lang }: { lang: 'vi' | 'en' }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProjects.map((project) => (
           <div key={project.id} className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow group flex flex-col h-full">
-            <div className="h-[220px] overflow-hidden relative">
+            <div className="project-card-image-wrapper">
                <img 
                  src={getAssetUrl(project.image)}
                  alt={lang === 'vi' ? project.titleVi : project.titleEn}
                  loading="lazy"
                  onError={handleImageError}
-                 className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-500 project-card-image"
+                 className="group-hover:scale-105 transition-transform duration-500 project-card-image"
                />
-               <div className="absolute top-4 left-4 bg-[#0AE340] text-[#1e2b26] text-xs font-bold px-3 py-1 rounded shadow uppercase">
+               <div className="absolute top-4 left-4 bg-[#0AE340] text-[#1e2b26] text-xs font-bold px-3 py-1 rounded shadow uppercase z-10">
                  {project.category}
                </div>
             </div>
