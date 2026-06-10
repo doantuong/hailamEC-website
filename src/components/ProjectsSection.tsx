@@ -7,22 +7,20 @@ export default function ProjectsSection({ lang }: { lang: 'vi' | 'en' }) {
   const categories = ['All', ...new Set(projects.map(p => p.category))];
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
 
-  const getAssetUrl = (path?: string) => {
-    if (!path) return `${import.meta.env.BASE_URL}projects/default-industrial.jpg`;
-    if (path.startsWith("http")) return path;
-    return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+  const getProjectImage = (project: typeof projects[0] & { imageUrl?: string }) => {
+    if (project.imageUrl) return project.imageUrl;
+
+    if (project.image) {
+      if (project.image.startsWith("http")) return project.image;
+      return `${import.meta.env.BASE_URL}${project.image.replace(/^\/+/, "")}`;
+    }
+
+    return "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80";
   };
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    const target = e.currentTarget;
-    const defaultSrc = `${import.meta.env.BASE_URL}projects/default-industrial.jpg`;
-    
-    if (target.src.endsWith(defaultSrc)) {
-      // If the default image also fails, hide the image completely so the gradient shows
-      target.style.display = 'none';
-    } else {
-      target.src = defaultSrc;
-    }
+    e.currentTarget.onerror = null;
+    e.currentTarget.src = "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80";
   };
 
   return (
@@ -59,7 +57,7 @@ export default function ProjectsSection({ lang }: { lang: 'vi' | 'en' }) {
           <div key={project.id} className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow group flex flex-col h-full">
             <div className="project-card-image-wrapper">
                <img 
-                 src={getAssetUrl(project.image)}
+                 src={getProjectImage(project)}
                  alt={lang === 'vi' ? project.titleVi : project.titleEn}
                  loading="lazy"
                  onError={handleImageError}

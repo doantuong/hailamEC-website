@@ -12,7 +12,8 @@ export const projects = [
     resultVi: "Hệ thống vận hành ổn định, hỗ trợ giám sát tập trung và bảo trì thuận tiện.",
     resultEn: "Stable operation with centralized monitoring and easier maintenance.",
     tags: ["PLC", "SCADA", "Automation"],
-    image: "projects/plc-scada.jpg"
+    image: "projects/plc-scada.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: "wqms-cems-monitoring",
@@ -27,7 +28,8 @@ export const projects = [
     resultVi: "Hỗ trợ theo dõi dữ liệu quan trắc và đáp ứng yêu cầu vận hành.",
     resultEn: "Supports monitoring data visibility and operational requirements.",
     tags: ["CEMS", "WQMS", "I&C"],
-    image: "projects/cems-wqms.jpg"
+    image: "projects/cems-wqms.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: "electrical-cabinet-design",
@@ -42,7 +44,8 @@ export const projects = [
     resultVi: "Hệ thống điện an toàn, phân phối nguồn hiệu quả và tuân thủ tiêu chuẩn IEC.",
     resultEn: "Safe electrical system, efficient power distribution, and IEC compliance.",
     tags: ["Electrical Panel", "MSB", "MCC"],
-    image: "projects/electrical-epc.jpg"
+    image: "projects/electrical-epc.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1200&q=80"
   },
   {
      id: "bms-remote-engineering",
@@ -57,6 +60,7 @@ export const projects = [
      resultVi: "Tiết kiệm năng lượng, đơn giản hóa quy trình vận hành và cải thiện chi phí.",
      resultEn: "Energy savings, simplified operational processes, and improved costs.",
      tags: ["BMS", "BIM", "Remote Engineering"],
-     image: "projects/bms-system.jpg"
+     image: "projects/bms-system.jpg",
+     imageUrl: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
   }
 ];
