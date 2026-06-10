@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://hailamec.com/</loc>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://hailamec.com/vi/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://hailamec.com/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://hailamec.com/" />
+    <loc>https://doantuong.github.io/hailamEC-website/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://doantuong.github.io/hailamEC-website/vi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://doantuong.github.io/hailamEC-website/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doantuong.github.io/hailamEC-website/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://hailamec.com/vi/</loc>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://hailamec.com/vi/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://hailamec.com/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://hailamec.com/" />
+    <loc>https://doantuong.github.io/hailamEC-website/vi/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://doantuong.github.io/hailamEC-website/vi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://doantuong.github.io/hailamEC-website/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doantuong.github.io/hailamEC-website/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://hailamec.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://hailamec.com/vi/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://hailamec.com/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://hailamec.com/" />
+    <loc>https://doantuong.github.io/hailamEC-website/en/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://doantuong.github.io/hailamEC-website/vi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://doantuong.github.io/hailamEC-website/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://doantuong.github.io/hailamEC-website/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
