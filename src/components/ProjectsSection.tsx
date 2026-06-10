@@ -7,6 +7,12 @@ export default function ProjectsSection({ lang }: { lang: 'vi' | 'en' }) {
   const categories = ['All', ...new Set(projects.map(p => p.category))];
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
 
+  const getAssetUrl = (path?: string) => {
+    if (!path) return `${import.meta.env.BASE_URL}projects/default-industrial.jpg`;
+    if (path.startsWith("http")) return path;
+    return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+  };
+
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     e.currentTarget.onerror = null; // Prevent infinite loop
     e.currentTarget.src = `${import.meta.env.BASE_URL}projects/default-industrial.jpg`;
@@ -46,7 +52,7 @@ export default function ProjectsSection({ lang }: { lang: 'vi' | 'en' }) {
           <div key={project.id} className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow group flex flex-col h-full">
             <div className="h-[220px] overflow-hidden relative">
                <img 
-                 src={`${import.meta.env.BASE_URL}${project.image}`}
+                 src={getAssetUrl(project.image)}
                  alt={lang === 'vi' ? project.titleVi : project.titleEn}
                  loading="lazy"
                  onError={handleImageError}
