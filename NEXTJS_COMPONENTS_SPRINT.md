@@ -171,7 +171,7 @@ export default function Footer() {
               <a href="https://youtube.com/@hailamec" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FF0000] transition-colors" aria-label="YouTube">
                 <Youtube className="w-5 h-5 text-white" />
               </a>
-              <a href="https://tiktok.com/@hailamec" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-black transition-colors" aria-label="TikTok">
+              <a href="https://www.tiktok.com/@hailam.ec" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-black transition-colors" aria-label="TikTok">
                 <Video className="w-5 h-5 text-white" />
               </a>
             </div>
